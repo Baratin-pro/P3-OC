@@ -1,0 +1,235 @@
+.omf-title{
+    grid-row: omf-menu;
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1.6em;
+}
+
+.omf-card{
+    grid-row: omf-next__container;
+    margin: 20px;
+    box-shadow: 0 0 15px rgba(175, 175, 175, 0.7);
+    h2, .note__icon{
+        @include background-clip;
+    }
+   
+    &__header{
+        margin: 70px 0;
+        text-align: center;
+    }
+    &__body{
+        margin: 0 5%;
+        line-height: 2em; 
+        ul{
+            margin-bottom: 60px;
+            li{
+                :nth-child(even){
+                margin-left: 20px;
+            }
+            display: flex;
+            justify-content: space-between;
+            margin: 0 10%;
+            font-size: 1.1em;
+            }
+        }
+        &__subtitle{
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            h3{
+                font-size: 1.4em;
+                &::after{
+                    display: block;
+                    content: '';
+                    bottom: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 2px;
+                    transition: width 2s; 
+                }&:hover::after{
+                    transition: width 2s;
+                    width: 100%;
+                }
+            }
+            img{
+                width: 35%;
+                height: 30px;
+            }
+        }
+        &__footer{
+            text-align: center;
+        }
+    }
+    @include tablet-computer{
+        padding: 20px;
+        margin: 10px;
+    }
+    @include computer-only{
+        margin: 10px auto;
+        width: 900px;
+    }
+    &--note{
+        color: $note-colors;
+        background: $note-background__colors;
+        .note__icon{
+                background-image: $note-icon__background__image;
+                font-size: $note-icon__size;
+            }
+        .omf-card__header{
+            margin: 50px 0 20px;
+            h2{
+                color: $note-colors;
+                font-size: 2.1em;
+            }
+            
+        }
+            h3{
+                &::after{
+                    background-color: $note-colors;
+                }
+            }
+            ul li{
+                margin: 0;
+            }
+            .omf-card__body__footer{
+                h2{
+                color: $note-colors;
+                margin-left: 5px;
+                font-size: 1.8em;
+                display: inline;
+                }
+            }
+    }
+    &--chic{
+        background: $chic-background__colors;
+        .omf-card__header{
+            h2{
+                font-size: 1.6em;
+                background-image: $chic-background__image; 
+                @include tablet-computer{
+                    font-size: 2.6em;
+                }
+            }
+        }
+        h3{
+            font-size: 1.2em;
+        }
+        &__orange{
+            color: rgb(198, 116, 18); 
+            &__under{
+                &::after{
+                    background-color: rgb(198, 116, 18);
+                }
+            } 
+        }
+        &__purple{
+            color: rgb(165, 103, 153);
+            &__under{
+                &::after{
+                    background-color: rgb(165, 103, 153);
+                }
+            } 
+        }
+        &__blue{
+            color: rgb(110, 76, 204);
+            &__under{
+                &::after{
+                    background-color: rgb(110, 76, 204);
+                }
+            } 
+        }
+    }
+    &--delice{
+        background-color: $delice-background__colors;
+        .omf-card__header{
+            h2{
+                font-size: 2.2em;
+                background-image: $delice-background__image;
+                @include tablet-computer{
+                    font-size: 4.2em;
+                }
+            }
+        }
+        h3{
+            font-size: 1.2em;
+        }
+        &__under{
+            &--darkblue{
+                &::after{
+                    background-color: rgb(2, 40, 221);
+                }
+            }
+            &--blue{
+                &::after{
+                    background-color: rgb(6, 112, 243);
+                }
+            }
+            &--lightblue{
+                &::after{
+                    background-color: rgb(34, 157, 249);
+                }
+            }
+        }
+    }
+    &--palette{
+        background: $palette-background__colors;
+        .omf-card__header{
+            h2{
+                font-size: 2.2em;
+                background-image: $palette-background__image;
+                
+                @include tablet-computer{
+                    font-size: 4.2em;
+                }
+            }
+        }
+        h3{
+            &::after{
+                background:$palette-background__image;
+            }
+        }
+    }
+    &--mentions{
+        background-color: $mentions-background__colors;
+        a{
+            text-decoration: none;
+            color: $primary-color;
+            font-weight: 700;
+            background-color: $background-color;
+            padding: .3em;
+            
+        }
+        .omf-card__header{
+            h2{
+                font-size: 1.6em;
+                background-image: $mentions-background__images; 
+                @include tablet-computer{
+                    font-size: 2.6em;
+                }
+            }
+        }
+        h3{
+            font-size: 1.2em;
+            @include tablet-computer{
+                font-size: 1.4em;
+            }
+            &::after{
+                background: $mentions-background__images;
+            }
+        }
+        .omf-card__body__contact{ 
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: auto;
+            width: 50%;
+            @include tablet-computer{
+                width: 40%;
+            }
+        }
+    }
+}
+
+

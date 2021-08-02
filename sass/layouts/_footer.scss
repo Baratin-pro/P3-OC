@@ -1,0 +1,25 @@
+/**************** Pied de la page ****************/
+
+.omf-bottombar{
+    grid-row: omf-bottombar;
+    grid-column: 1;
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $background-color;
+    display: flex;
+    justify-content: space-between;
+    a{
+        margin: 10px 5px;
+        color: $primary-color;
+        font-size: 1.3em;
+        text-decoration: none;
+        &:hover{
+            animation: wiggle 0.5s;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+    
